@@ -25,4 +25,10 @@ public class CategoryTest {
     assertEquals(true, myCategory instanceof Category);
   }
 
+  @Test
+  public void getName_categoryInstantiatesWithName_String() {
+    Category myCategory = new Category("Household chores");
+    assertEquals("Household chores", myCategory.getName());
+  } 
+
 }
