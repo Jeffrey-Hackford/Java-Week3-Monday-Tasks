@@ -1,14 +1,17 @@
 import java.util.List;
 import org.sql2o.*;
+import java.time.LocalDateTime;
 
 public class Task {
   private int id;
   private String description;
   private int categoryId;
+  private LocalDateTime createdAt;
 
   public Task(String description, int categoryId) {
     this.description = description;
     this.categoryId = categoryId;
+    createdAt = LocalDateTime.now();
   }
 
   public String getDescription() {
@@ -21,6 +24,10 @@ public class Task {
 
   public int getCategoryId() {
     return categoryId;
+  }
+
+  public LocalDateTime getCreatedAt() {
+    return createdAt;
   }
 
   public static List<Task> all() {
